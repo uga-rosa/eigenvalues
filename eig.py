@@ -12,7 +12,7 @@ def main():
         raise RuntimeError(f"No such file: {filepath}")
     eigs = calc_eig_from_dat(filepath)
     [head, ext] = os.path.splitext(filepath)
-    output_filepath = f"{head}_eig.{ext}"
+    output_filepath = f"{head}_eig{ext}"
     write_eig(output_filepath, eigs)
 
 
