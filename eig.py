@@ -7,12 +7,13 @@ def main():
     if len(args) != 2:
         # args[0] is this script file name
         raise RuntimeError("Only one argument is required.")
-    filename = args[1]
-    if not os.path.isfile(filename):
-        raise RuntimeError(f"No such file: {filename}")
-    eigs = calc_eig_from_dat(filename)
-    output_filename = os.path.splitext(filename)[0] + "_eigenvalues.dat"
-    write_eig(output_filename, eigs)
+    filepath = args[1]
+    if not os.path.isfile(filepath):
+        raise RuntimeError(f"No such file: {filepath}")
+    eigs = calc_eig_from_dat(filepath)
+    [head, ext] = os.path.splitext(filepath)
+    output_filepath = f"{head}_eig.{ext}"
+    write_eig(output_filepath, eigs)
 
 
 def calc_eig_from_dat(fname):
