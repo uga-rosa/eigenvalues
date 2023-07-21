@@ -61,7 +61,7 @@ def write_eig(fname, eigs):
             template_vector = "%10.4f %10.4f %10.4f"
             l1 = template_lambda % w[0]
             l2 = template_lambda % w[1]
-            l3 = template_lambda % w[1]
+            l3 = template_lambda % w[2]
             v1 = template_vector % (v[0][0], v[0][1], v[0][2])
             v2 = template_vector % (v[1][0], v[1][1], v[1][2])
             v3 = template_vector % (v[2][0], v[2][1], v[2][2])
